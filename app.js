@@ -32,7 +32,7 @@ var fs = require("fs"),
     RequestToken = require("./models/requesttoken"),
     User = require("./models/user"),
     Host = require("./models/host"),
-    Pump2Status = require("./models/pump2status"),
+    Pump2Status = require("./models/pump2tweet"),
     StatusNetUser = require("./models/statusnetuser"),
     StatusNet = require("./models/statusnet"),
     Shadow = require("./models/shadow"),
@@ -49,15 +49,15 @@ var fs = require("fs"),
     },
     log,
     logParams = {
-        name: "pump2status",
+        name: "pump2tweet",
         serializers: {
             req: Logger.stdSerializers.req,
             res: Logger.stdSerializers.res
         }
     };
 
-if (fs.existsSync("/etc/pump2status.json")) {
-    config = _.defaults(JSON.parse(fs.readFileSync("/etc/pump2status.json")),
+if (fs.existsSync("/etc/pump2tweet.json")) {
+    config = _.defaults(JSON.parse(fs.readFileSync("/etc/pump2tweet.json")),
                         defaults);
 } else {
     config = defaults;
@@ -77,7 +77,7 @@ log.info("Initializing pump live");
 
 if (!config.params) {
     if (config.driver == "disk") {
-        config.params = {dir: "/var/lib/pump2status/"};
+        config.params = {dir: "/var/lib/pump2tweet/"};
     } else {
         config.params = {};
     }

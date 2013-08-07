@@ -25,7 +25,7 @@ var wf = require("webfinger"),
     StatusNet = require("../models/statusnet"),
     StatusNetUser = require("../models/statusnetuser"),
     RequestToken = require("../models/requesttoken"),
-    Pump2Status = require("../models/pump2status");
+    Pump2Status = require("../models/pump2tweet");
 
 exports.hostmeta = function(req, res) {
     res.json({

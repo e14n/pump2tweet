@@ -1,4 +1,4 @@
-// pump2status.js
+// pump2tweet.js
 //
 // data object representing the app itself
 //

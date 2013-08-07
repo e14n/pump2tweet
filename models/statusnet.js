@@ -27,7 +27,7 @@ var _ = require("underscore"),
     OAuth = require("oauth").OAuth,
     DatabankObject = require("databank").DatabankObject,
     Host = require("./host"),
-    Pump2Status = require("./pump2status"),
+    Pump2Status = require("./pump2tweet"),
     RequestToken = require("./requesttoken");
 
 var StatusNet = DatabankObject.subClass("statusnet");
@@ -188,7 +188,7 @@ StatusNet.prototype.getOAuth = function() {
                      Pump2Status.url("/authorized/statusnet/"+statusnet.hostname),
                      "HMAC-SHA1",
                      null, // nonce size; use default
-                     {"User-Agent": "pump2status.net/0.1.0"});
+                     {"User-Agent": "pump2tweet.net/0.1.0"});
 };
 
 // Map of hostname => {client_id: ..., client_secret: ...}
