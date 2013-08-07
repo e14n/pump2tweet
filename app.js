@@ -32,7 +32,7 @@ var fs = require("fs"),
     RequestToken = require("./models/requesttoken"),
     User = require("./models/user"),
     Host = require("./models/host"),
-    Pump2Status = require("./models/pump2tweet"),
+    Pump2Tweet = require("./models/pump2tweet"),
     StatusNetUser = require("./models/statusnetuser"),
     StatusNet = require("./models/statusnet"),
     Shadow = require("./models/shadow"),
@@ -44,7 +44,7 @@ var fs = require("fs"),
         address: "localhost",
         hostname: "localhost",
         driver: "disk",
-        name: "Pump2Status",
+        name: "Pump2Tweet",
         description: "Find your StatusNet friends on pump.io."
     },
     log,
@@ -276,7 +276,7 @@ async.waterfall([
             hostname: config.hostname,
             app: app,
             bank: db,
-            userAgent: "Pump2Status/0.1.0"
+            userAgent: "Pump2Tweet/0.1.0"
         });
 
         // Configure this global object
@@ -288,13 +288,13 @@ async.waterfall([
         log.info({name: config.name, 
                   description: config.description, 
                   hostname: config.hostname},
-                 "Initializing Pump2Status object");
+                 "Initializing Pump2Tweet object");
 
-        Pump2Status.name        = config.name;
-        Pump2Status.description = config.description;
-        Pump2Status.hostname    = config.hostname;
+        Pump2Tweet.name        = config.name;
+        Pump2Tweet.description = config.description;
+        Pump2Tweet.hostname    = config.hostname;
 
-        Pump2Status.protocol = (config.key) ? "https" : "http";
+        Pump2Tweet.protocol = (config.key) ? "https" : "http";
 
         // Let Web stuff get to config
 

@@ -25,14 +25,14 @@ var wf = require("webfinger"),
     StatusNet = require("../models/statusnet"),
     StatusNetUser = require("../models/statusnetuser"),
     RequestToken = require("../models/requesttoken"),
-    Pump2Status = require("../models/pump2tweet");
+    Pump2Tweet = require("../models/pump2tweet");
 
 exports.hostmeta = function(req, res) {
     res.json({
         links: [
             {
                 rel: "dialback",
-                href: Pump2Status.url("/dialback")
+                href: Pump2Tweet.url("/dialback")
             }
         ]
     });
@@ -44,16 +44,16 @@ exports.index = function(req, res, next) {
             if (err) {
                 next(err);
             } else {
-                res.render('userindex', { title: "Pump2Status", user: req.user, shadows: shadows });
+                res.render('userindex', { title: "Pump2Tweet", user: req.user, shadows: shadows });
             }
         });
     } else {
-        res.render('index', { title: "Pump2Status" });
+        res.render('index', { title: "Pump2Tweet" });
     }
 };
 
 exports.about = function(req, res) {
-    res.render('about', { title: 'About Pump2Status' });
+    res.render('about', { title: 'About Pump2Tweet' });
 };
 
 exports.login = function(req, res) {
@@ -285,11 +285,11 @@ exports.findFriends = function(req, res, next) {
             next(err);
         } else {
             if (found.length === 0) {
-                res.render('no-friends', {title: "Pump2Status - No Friends Found",
+                res.render('no-friends', {title: "Pump2Tweet - No Friends Found",
                                             user: req.user,
                                             snuser: snuser});
             } else {
-                res.render('find-friends', {title: "Pump2Status - Find Friends",
+                res.render('find-friends', {title: "Pump2Tweet - Find Friends",
                                             user: req.user,
                                             snuser: snuser,
                                             found: found});
