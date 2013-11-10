@@ -1,12 +1,12 @@
-# pump2status
+# pump2tweet
 
 This is a bridge that lets you find the pump.io accounts of people you
-know on the OStatus network and automatically follow them.
+know on the Twitter network and automatically follow them.
 
 You can also automatically push your pump.io activities to your
-StatusNet site. So that's good, too.
+Twitter account. So that's good, too.
 
-The canonical site is at https://pump2status.net/ . If you set up your
+The canonical site is at https://pump2tweet.com/ . If you set up your
 own, it will only have data for people who signed up with your server,
 so it's not going to be as useful. But the code's here if you want to
 study it or set up another friend-finder bridge like this.
